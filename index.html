@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choosing A Mac</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="contain-to-grid">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name"><h1><a>Choosing a Mac</a></h1></li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="active"><a href="http://www.csrhymes.com/">Back to C. S. Rhymes</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns" id="start">
+        <h1>Choosing a Mac</h1>
+        <p>I don't know about you, but I have spent many hours looking at the Apple store trying to understand what Mac I should buy. There are lots of options available!</p>
+        <p>I've made this little web app as a way of helping you decide what option is best for you (as well as a little side project for myself to learn some more JavaScript).</p>
+        <a href="#" class="button expand" onclick="nextScreen('#desk', '#start');">Let's get started</a>
+      </div>
+      
+      <div class="large-12 columns hide" id="desk">
+        <h2>Do you always use a desk?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" onclick="nextScreen('#screen', '#desk');">Yes</a></li>
+          <li><a href="#" class="button" onclick="nextScreen('#portable', '#desk');">No</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="portable">
+        <h2>Do you want something light weight or something with more performance?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" onclick="nextScreen('#performance', '#portable');">Performance</a></li>
+          <li><a href="#" class="button" onclick="nextScreen('#light-weight', '#portable');">Light Weight</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="light-weight">
+        <h2>What screen size would you like?</h2>
+        <ul class="button-group even-3">
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('11-macbook-air');">11 inch</a></li>
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('macbook');">12 inch</a></li>
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('13-macbook-air');">13 inch</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="performance">
+        <h2>Are you going to be doing graphics intensive work?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('15-macbook-pro');">Yes</a></li>
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('13-macbook-pro');">No</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="screen">
+        <h2>Do you want a screen included?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" onclick="nextScreen('#screen-res', '#screen');">Yes</a></li>
+          <li><a href="#" class="button" onclick="nextScreen('#no-screen', '#screen');">No</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="screen-res">
+        <h2>Do you want a good screen or a really good screen?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('imac');">Good</a></li>
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('imac-5k');">Really Good</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns hide" id="no-screen">
+        <h2>Are you doing a lot of processor and graphics intensive work?</h2>
+        <ul class="button-group even-2">
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('mac-pro');">Yes</a></li>
+          <li><a href="#" class="button" data-reveal-id="result" onclick="result('mac-mini');">No</a></li>
+        </ul>
+        <a href="#" onclick="reload();">Start again</a>
+      </div>
+
+      <div class="large-12 columns footer">
+        
+        <p class="footer-text">Written by <a href="http://www.csrhymes.com">C. S. Rhymes</a> using the <a href="http://foundation.zurb.com/">Foundation</a> framework.</p>
+      </div>
+
+      <div id="result" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <p>You should consider:</p>
+        <h2 id="result-title"></h2>
+        <p id="result-description"></p>
+        <a href="" id="result-link" class="button expand" target="_blank">Find Out More</a>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div>
+
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/show-hide.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
