@@ -22,14 +22,36 @@ var resultsList = [
 
 // Updates the result div with the correct product information
 function result(whichMac) {
+	
+	var tweetText = '';
+	
 	for(i = 0; i < resultsList.length; i++) {
 		if (resultsList[i].name == whichMac) {
 			document.getElementById('result-title').innerHTML=resultsList[i].title;
 			document.getElementById('result-description').innerHTML=resultsList[i].description;
 			document.getElementById('result-link').href=resultsList[i].link;
+			
+			tweetText = 'I\'ve been recommended a ' + resultsList[i].title +'. Get help choosing a Mac here: ';
+			console.log(tweetText);
 		}
-	}
+	}			
+			// update the tweet button content
+			$('#tweetBtn iframe').remove();
+      // Generate new markup
+      var tweetBtn = $('<a></a>')
+          .addClass('twitter-share-button')
+          .attr('href', 'http://twitter.com/share')
+          .attr('data-url', 'http://www.csrhymes.com/choosing-a-mac/')
+          .attr('data-text', tweetText)
+          .attr('data-via', 'chrisrhymes');
+      $('#tweetBtn').append(tweetBtn);
+      twttr.widgets.load();
+			
+			
+
 } 
+
+
 
 // Used when user clicks the start again button
 function reload() {

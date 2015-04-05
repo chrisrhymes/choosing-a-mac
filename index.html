@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Choosing A Mac</title>
+    <meta name="description" content="Need help choosing which Mac to buy? Check out this simple walkthrough to help you choose which Mac is for you." />
+    <title>Help choosing A Mac | C.S. Rhymes</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -119,6 +120,16 @@
         <h2 id="result-title"></h2>
         <p id="result-description"></p>
         <a href="" id="result-link" class="button expand" target="_blank">Find Out More</a>
+        <div id="tweetBtn">
+          <a class="twitter-share-button" id="result-tweet"
+            href="https://twitter.com/share"
+            data-url="http://www.csrhymes.com/choosing-a-mac/"
+            data-via="chrisrhymes"
+            data-text="I've been recommended a Mac. Find out which Mac you should buy"
+            data-count="horizontal">
+          Tweet
+          </a>
+        </div>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
 
@@ -130,5 +141,9 @@
     <script>
       $(document).foundation();
     </script>
+    
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
   </body>
 </html>
