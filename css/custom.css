@@ -8,3 +8,61 @@
 	font-size: 0.8em;
 	margin-top: 20px;
 }
+
+h1, h2 {
+	text-align: center;
+	margin: 1em 0;
+}
+
+.fade-in {
+	@-webkit-animation: fadein 0.5s ease-in-out;
+	animation: fadein 0.5s ease-in-out;
+}
+
+.fade-out {
+	animation: fadeout 0.5s;
+}
+
+@-webkit-keyframes fadein {
+	0% {
+		opacity: 0;
+		left: -100%;
+	}
+	75% {
+		left: 10%;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		left: -100%;
+	}
+	75% {
+		left: 10%;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
+
+
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+		left: 0;
+	}
+	25% {
+		left: 10%;
+	}
+	100% {
+		opacity: 0;
+		left: -100%;
+	}
+}
